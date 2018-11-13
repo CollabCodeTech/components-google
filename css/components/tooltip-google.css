@@ -1,0 +1,51 @@
+.tooltip-google {
+  display: inline-block;
+  position: relative;
+}
+
+.tooltip-google::after,
+.tooltip-google::before {
+  pointer-events: none;
+  opacity: 0;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+}
+
+.tooltip-google::after {
+  content: attr(data-tooltip);
+  transition: opacity 200ms 200ms linear;
+  background-color: #2a2a2a;
+  color: #fff;
+  padding: 7px 10px;
+  transform: translateY(calc(100% + 14px)) translateX(-50%);
+  text-align: center;
+}
+
+.tooltip-google::before {
+  content: "";
+  opacity: 0;
+  width: 0px;
+  height: 0px;
+  border-top: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #2a2a2a;
+  border-left: 10px solid transparent;
+  transform: translateX(-50%) translateY(calc(100% + 10px));
+  transition: opacity 200ms linear, transform 200ms linear;
+}
+
+.tooltip-google:hover::after,
+.tooltip-google:hover::before {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.tooltip-google:hover::after {
+  transition: opacity 200ms linear;
+}
+
+.tooltip-google:hover::before {
+  transform: translateX(-50%) translateY(calc(100% - 4px));
+  transition: opacity 200ms 200ms linear, transform 200ms 200ms linear;
+}
