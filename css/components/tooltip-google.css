@@ -3,7 +3,7 @@
   position: relative;
 }
 
-.tooltip-google::after,
+.tooltip-google > .tooltip,
 .tooltip-google::before {
   pointer-events: none;
   opacity: 0;
@@ -12,14 +12,26 @@
   left: 50%;
 }
 
-.tooltip-google::after {
-  content: attr(data-tooltip);
+/* twitch.tv/marcobrunobr */
+
+.tooltip-google > .tooltip {
   transition: opacity 200ms 200ms linear;
   background-color: #2a2a2a;
   color: #fff;
   padding: 7px 10px;
   transform: translateY(calc(100% + 14px)) translateX(-50%);
   text-align: center;
+  word-wrap: break-word;
+}
+
+.tooltip-google.-small > .tooltip {
+  width: 80%;
+}
+.tooltip-google.-medium > .tooltip {
+  width: 100%;
+}
+.tooltip-google.-big > .tooltip {
+  width: 120%;
 }
 
 .tooltip-google::before {
@@ -35,13 +47,13 @@
   transition: opacity 200ms linear, transform 200ms linear;
 }
 
-.tooltip-google:hover::after,
+.tooltip-google:hover > .tooltip,
 .tooltip-google:hover::before {
   opacity: 1;
   pointer-events: auto;
 }
 
-.tooltip-google:hover::after {
+.tooltip-google:hover > .tooltip {
   transition: opacity 200ms linear;
 }
 
