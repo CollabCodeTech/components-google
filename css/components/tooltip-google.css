@@ -25,13 +25,13 @@
 }
 
 .tooltip-google.-small > .tooltip {
-  width: 80%;
+  width: 10vw;
 }
 .tooltip-google.-medium > .tooltip {
-  width: 100%;
+  width: 20vw;
 }
 .tooltip-google.-big > .tooltip {
-  width: 120%;
+  width: 30vw;
 }
 
 .tooltip-google::before {
